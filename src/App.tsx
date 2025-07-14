@@ -4,12 +4,14 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/hero";
+import ContentGrid from "./components/ContentGrid";
 
 function App() {
   return (
     <div className="min-h-screen bg-light text-dark font-sans">
       <Header />
       <Hero />
+      <ContentGrid />
     </div>
   );
 }

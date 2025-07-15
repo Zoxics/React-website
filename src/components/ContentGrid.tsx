@@ -7,7 +7,6 @@ function ContentGrid() {
     <div className="mt-4 grid gap-4 lg:grid-cols-2 sm:grid-cols-1">
       <About />
       <Paragraph />
-      <Folder />
     </div>
   );
 }

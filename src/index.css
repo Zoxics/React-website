@@ -3,5 +3,42 @@
 @tailwind utilities;
 
 body {
-  @apply bg-light text-white text-center p-10;
+  @apply bg-light p-10 text-white text-center;
+}
+
+.markdown a {
+  @apply text-primary;
+}
+
+.markdown a:hover {
+  @apply text-primary;
+}
+
+.markdown h1 {
+  @apply my-4 font-bold text-3xl;
+}
+
+.markdown h2 {
+  @apply my-3 font-semibold text-2xl;
+}
+
+.markdown h3 {
+  @apply my-2 font-medium text-xl;
+}
+
+.markdown img {
+  @apply rounded-md;
+}
+
+.markdown p {
+  @apply my-1 text-dark text-base;
+}
+
+.markdown ul,
+.markdown ol {
+  @apply pl-5 text-dark list-disc;
+}
+
+.markdown li {
+  @apply my-1 text-dark;
 }

@@ -1,12 +1,15 @@
 import About from "./About";
-import Folder from "./Folder";
+import Carousel from "./Carousel";
 import Paragraph from "./Paragraph";
+import Projects from "./Projects";
 
 function ContentGrid() {
   return (
-    <div className="mt-4 grid gap-4 lg:grid-cols-2 sm:grid-cols-1">
+    <div className="sm:mx-auto -mx-12 mt-12 grid gap-12 lg:grid-cols-2 sm:grid-cols-1">
       <About />
       <Paragraph />
+      <Projects />
+      {/* <Carousel /> */}
     </div>
   );
 }

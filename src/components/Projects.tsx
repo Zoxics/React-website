@@ -43,7 +43,8 @@ function Projects() {
   }, []);
 
   return (
-    <div className="font-staat text-left">
+    <div className="font-staat w-full text-left">
+      <h1 className="text-6xl text-primary mb-3">Projects</h1>
       {projects?.map((project) => (
         <Project
           key={project.name}
@@ -60,86 +61,100 @@ export function Project({ name, meta, content }: Project) {
   const [isOpen, setIsOpen] = useState(false);
   const [rotation] = useState(() => Math.random() * 10 - 5);
   return (
-    <div className="w-full max-w-5xl mx-auto my-6 group px-4 sm:px-6 lg:px-8">
-      <h1 className="text-primary text-6xl text-left">Projects</h1>
-      <svg
-        viewBox="10 00 600 141"
-        className="w-full h-auto cursor-pointer min-w-[300px]"
-        xmlns="http://www.w3.org/2000/svg"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {/* Folder back with tab */}
-        <path
-          d="M10 10 H180 L280 200 H590 V140 H10 Z"
-          fill="#d6be95"
-          stroke="#1c4848"
-          strokeWidth="1.5"
-        />
-
-        {/* Folder front */}
-        <g className="origin-bottom transition-transform duration-300 group-hover:-rotate-x-[25deg]">
+    <div className="w-full flex justify-center pb-4">
+      <div className="w-full max-w-[680px]">
+        <svg
+          viewBox="05 05 850 316"
+          className="w-full h-auto cursor-pointer min-w-[300px]"
+          xmlns="http://www.w3.org/2000/svg"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {/* Folder back with tab */}
           <path
-            d="M10 40 H590 V140 H10 Z"
+            d="M10 07 H300 L360 70 H690 V190 H10 Z"
             fill="#d6be95"
             stroke="#1c4848"
             strokeWidth="1.5"
           />
 
-          {/* Description text on front of folder */}
+          {/* Folder front */}
+          <g className="origin-bottom transition-transform duration-300 group-hover:-rotate-x-[25deg]">
+            <path
+              d="M10 60 H850 V320 H10 Z"
+              fill="#d6be95"
+              stroke="#1c4848"
+              strokeWidth="1.5"
+            />
+
+            {/* Description text on front of folder */}
+
+            {/* Shadow Layer */}
+            <text
+              x="427"
+              y="212"
+              textAnchor="middle"
+              fontSize="6rem"
+              fontWeight="bold"
+              fill="#1c4848"
+              pointerEvents="none"
+              letterSpacing="1px"
+              transform={`rotate(${rotation} 300 100)`}
+            >
+              {meta.description}
+            </text>
+
+            <text
+              x="425"
+              y="210"
+              textAnchor="middle"
+              fontSize="6rem"
+              fontWeight="bold"
+              fill="#be4e2d"
+              pointerEvents="none"
+              letterSpacing="1px"
+              transform={`rotate(${rotation} 300 100)`}
+            >
+              {meta.description}
+            </text>
+          </g>
+
+          {/* Folder tab text (name) */}
           <text
-            x="300"
-            y="100"
+            x="160"
+            y="45"
             textAnchor="middle"
             fontSize="2rem"
             fontWeight="bold"
-            fill="#be4e2d"
-            pointerEvents="none"
+            fill="#1c4848"
             letterSpacing="1px"
-            transform={`rotate(${rotation} 300 100)`}
+            pointerEvents="none"
           >
-            {meta.description}
+            {name.replace(".md", "").toUpperCase()}
           </text>
-        </g>
+        </svg>
 
-        {/* Folder tab text (name) */}
-        <text
-          x="100"
-          y="30"
-          textAnchor="middle"
-          fontSize="1em"
-          fontWeight="bold"
-          fill="#1c4848"
-          letterSpacing="1px"
-          pointerEvents="none"
-        >
-          {name.replace(".md", "").toUpperCase()}
-        </text>
-      </svg>
-
-      {/* Markdown content - perfectly aligned with folder */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key="content"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="relative bg-[url('./assets/construction-paper.png')] bg-cover border-l-[1.5px] border-r-[1.5px] border-b-[1.5px] border-[#1c4848] font-mono overflow-hidden"
-            style={{
-              width: "calc(100% * 580/600)", // Matches the folder width (590-10)/600 = 580/600
-              marginLeft: "calc(100% * 0/600)", // Matches the folder left margin 10/600
-              padding: "clamp(16px, 3vw, 24px)",
-            }}
-          >
-            <div
-              className="markdown prose prose-sm max-w-none prose-headings:text-dark prose-p:text-black prose-li:text-black prose-strong:text-black prose-em:text-black prose-code:text-black prose-pre:text-black prose-a:text-blue-700"
-              style={{ fontSize: "clamp(12px, 1.5vw, 14px)" }}
-              dangerouslySetInnerHTML={{ __html: marked(content) }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Markdown content - perfectly aligned with folder */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="ml-[3px] relative w-full max-w-[578px] bg-[url('./assets/construction-paper.png')] bg-cover border-[1.5px] border-t-0 border-[#1c4848] font-mono overflow-hidden"
+              style={{
+                padding: "clamp(16px, 2vw, 24px)",
+                fontSize: "clamp(12px, 1.5vw, 14px)",
+              }}
+            >
+              <div
+                className="markdown prose prose-sm max-w-none prose-headings:text-dark prose-p:text-black"
+                dangerouslySetInnerHTML={{ __html: marked(content) }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

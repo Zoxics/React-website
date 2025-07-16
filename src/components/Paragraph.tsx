@@ -1,6 +1,6 @@
 export default function Paragraph() {
   return (
-    <p className="font-staat text-2xl text-dark mx-4 mt-24">
+    <p className="font-staat text-2xl text-dark sm:mx-3 sm:mt-24 ">
       I'm a computer science student passionate about all things tech. As I
       enter the programming field, my interests are focused on artificial
       intelligence and cybersecurity—two areas where innovation meets critical

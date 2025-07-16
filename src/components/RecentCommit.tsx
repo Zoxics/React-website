@@ -59,7 +59,7 @@ export default function RecentCommit() {
         href={commit.url}
         target="_blank"
         rel="noopener noreferrer"
-        className=" text-light bg-primary py-4 font-staat tracking-wider text-2xl px-12"
+        className=" text-light bg-primary py-4 font-staat tracking-wider text-2xl px-12 shadow-md"
       >
         View on GitHub
       </a>

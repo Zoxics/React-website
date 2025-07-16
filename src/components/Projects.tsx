@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { marked } from "marked";
 import fm from "front-matter";
-import { FaFolder, FaCommentDots } from "react-icons/fa";
 
 interface Project {
   name: string;
@@ -64,7 +63,7 @@ export function Project({ name, meta, content }: Project) {
     <div className="w-full flex justify-center pb-4">
       <div className="w-full max-w-[680px]">
         <svg
-          viewBox="05 05 850 316"
+          viewBox="05 05 850 318"
           className="w-full h-auto cursor-pointer min-w-[300px]"
           xmlns="http://www.w3.org/2000/svg"
           onClick={() => setIsOpen(!isOpen)}
@@ -74,7 +73,7 @@ export function Project({ name, meta, content }: Project) {
             d="M10 07 H300 L360 70 H690 V190 H10 Z"
             fill="#d6be95"
             stroke="#1c4848"
-            strokeWidth="1.5"
+            strokeWidth="4"
           />
 
           {/* Folder front */}
@@ -83,7 +82,7 @@ export function Project({ name, meta, content }: Project) {
               d="M10 60 H850 V320 H10 Z"
               fill="#d6be95"
               stroke="#1c4848"
-              strokeWidth="1.5"
+              strokeWidth="4"
             />
 
             {/* Description text on front of folder */}
@@ -141,7 +140,7 @@ export function Project({ name, meta, content }: Project) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="ml-[3px] relative w-full max-w-[578px] bg-[url('./assets/construction-paper.png')] bg-cover border-[1.5px] border-t-0 border-[#1c4848] font-mono overflow-hidden"
+              className="ml-[2px] relative w-full max-w-[580px] bg-[url('./assets/construction-paper.png')] bg-cover border-[2px] border-t-0 border-[#1c4848] font-mono overflow-hidden"
               style={{
                 padding: "clamp(16px, 2vw, 24px)",
                 fontSize: "clamp(12px, 1.5vw, 14px)",

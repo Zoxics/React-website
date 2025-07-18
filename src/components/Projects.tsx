@@ -140,7 +140,7 @@ export function Project({ name, meta, content }: Project) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="ml-[2px] relative w-full max-w-[580px] bg-[url('./assets/construction-paper.png')] bg-cover border-[2px] border-t-0 border-[#1c4848] font-mono overflow-hidden"
+              className="ml-[1px] sm:ml-[2px] relative w-full max-w-[380px] md:max-w-[656px] lg:max-w-[580px] bg-[url('./assets/construction-paper.png')] bg-cover border-[2px] border-t-0 border-[#1c4848] font-mono overflow-hidden"
               style={{
                 padding: "clamp(16px, 2vw, 24px)",
                 fontSize: "clamp(12px, 1.5vw, 14px)",

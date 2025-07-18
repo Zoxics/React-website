@@ -43,23 +43,27 @@ export default function RecentCommit() {
   if (!commit) return <p>Loading recent commit...</p>;
 
   return (
-    <div className="p-3 sm:p-4 border-dark border-4 bg-[url('./assets/construction-paper.png')] bg-cover rounded-xl h-72 sm:h-60 font-mono shadow-dark shadow-[5px_5px_0px_0px] overflow-hidden">
-      <p className="text-dark text-lg">
-        <strong className="font-staat text-primary tracking-wider underline underline-offset-4 text-4xl decoration-dark">
-          Most Recent Commit: <br></br>
-        </strong>{" "}
-        {commit.message}
+    <div className="relative w-80 sm:w-96 bg-[url('./assets/construction-paper.png')] text-dark font-mono rounded-xl shadow-[5px_5px_0px_0px_#333] p-5 hover:rotate-[2deg] transition duration-200 mx-auto mt-6 border-[3px] border-dark origin-top-left">
+      {/* Thumbtack Pin or Circle */}
+      <div className="absolute top-2 left-2 w-4 h-4 bg-primary rounded-full shadow-md z-10" />
+
+      <p className="mb-2">
+        <strong className="block font-staat text-3xl underline decoration-dark underline-offset-4 text-primary mb-1">
+          Recent Commit
+        </strong>
+        <span className="block text-lg line-clamp-2">{commit.message}</span>
       </p>
-      <p className="text-sm text-dark pb-4">
-        <strong>Repo:</strong> {commit.repo}
-        <br />
+
+      <p className="text-sm">
+        <strong>Repo:</strong> {commit.repo} <br />
         <strong>Date:</strong> {commit.date}
       </p>
+
       <a
         href={commit.url}
         target="_blank"
         rel="noopener noreferrer"
-        className=" text-light bg-primary py-4 font-staat tracking-wider text-2xl px-12 shadow-md"
+        className="inline-block mt-4 bg-primary text-light px-6 py-2 font-staat text-xl shadow-md hover:brightness-110 transition"
       >
         View on GitHub
       </a>

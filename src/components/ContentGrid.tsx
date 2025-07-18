@@ -1,4 +1,5 @@
 import About from "./About";
+import Cert from "./Cert";
 import Contact from "./Contact";
 import Paragraph from "./Paragraph";
 import Projects from "./Projects";
@@ -15,6 +16,7 @@ function ContentGrid() {
       <Projects />
       <Contact />
       <RecentCommit />
+      <Cert />
     </div>
   );
 }

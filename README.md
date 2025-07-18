@@ -1,69 +1,49 @@
-# React + TypeScript + Vite
+# React Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A creative, responsive personal portfolio built with **React**, **TypeScript**, **Tailwind CSS**, and **Vite** — designed to showcase projects, skills, and contact info with style.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This portfolio combines clean design with expressive visuals and smooth animations. Key features include a dynamic project system powered by Markdown files, a custom "redacted" text effect for classified/hidden content, and a sticky-note-style recent commit display using the GitHub API.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React** + **Vite**
+- **Tailwind CSS**
+- **TypeScript**
+- [EmailJS](https://www.emailjs.com/) + `.env` for form handling
+- [Sonner Toast](https://sonner.emilkowal.ski/) for notifications
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [Marked](https://marked.js.org/) + [Front Matter](https://github.com/jxson/front-matter) for Markdown parsing
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Dynamic Projects List** — Markdown files (`.md`) auto-imported from `public/projects/`, parsed and rendered with title, description, and full content.
+- **Classified Redacted Effect** — Custom "blackout" visual on select text segments to simulate redacted/secret content.
+- **Sticky Note GitHub Activity** — Displays your most recent commit as a sticky note with thumbtack pin.
+- **Email Contact Form** — Integrated with EmailJS, styled with toast notifications for success/error.
+- **Mobile-Responsive** — Clean layout and typography across all screen sizes.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Getting Started
+
+### Requirements
+
+- Node.js v16+
+- PNPM / Yarn / NPM
+
+### Install & Run
+
+```bash
+git clone https://github.com/your-username/react-portfolio.git
+cd react-portfolio
+npm install
+npm run dev
 ```

@@ -24,8 +24,9 @@ function Hero() {
           </button>
 
           <a
-            href="`${import.meta.env.BASE_URL}Jonathan-Nargi-Resume-2025.pdf`"
-            download
+            href={`${import.meta.env.BASE_URL}Jonathan-Nargi-Resume-2025.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-row items-center gap-2 bg-primary text-light px-5 py-2 sm:px-6 sm:py-3 text-lg sm:text-2xl tracking-wide shadow-md hover:bg-orange-700 transition-all duration-200"
           >
             <HiOutlineDocument className="text-light" size={24} />
